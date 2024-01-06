@@ -1,0 +1,164 @@
+body {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+.column-left {
+    display: grid;
+    float: left;
+    width: 300px;
+    height: 700px;
+    justify-content: center;
+    align-content: center;
+}
+
+.column-right {
+    display: grid;
+    float: right;
+    width: 300px;
+    height: 700px;
+    justify-content: center;
+    align-content: center;
+}
+
+.chat-zone {
+    display: grid;
+    background-color: #3683af;
+    border-radius: 20px;
+    justify-self: right;
+    color: #eaeaea;
+    margin-right: 40px;
+    width: 300px;
+    height: 700px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.chat-background {
+    background-color: white;
+    border-radius: 20px;
+    justify-self: center;
+    align-self: flex-end;
+    width: 270px;
+    height: 580px;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.chat-title {
+    color: white;
+    margin: 5px 0px 0px 20px;
+    padding: 5px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.message-submit {
+    border-radius: 5px;
+    height: 40px;
+    width: 260px;
+    justify-self: center;
+    margin: 2px 20px 20px 20px;
+}
+
+.scorer {
+    display: flex;
+    border-radius: 200px;
+    background-color: #802f7e;
+    justify-self: center;
+    align-self: center;
+    color: #eaeaea;
+    width: 175px;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.scorer-count {
+    font-size: 80px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.column-middle {
+    display: grid;
+    justify-content: center;
+    margin: 0px;
+}
+
+.trophy-icon {
+    font-size: 40px;
+}
+
+.timer {
+    display: flex;
+    border-radius: 10px;
+    background-color: #cfa006;
+    justify-self: center;
+    color: #eaeaea;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 30px;
+}
+
+.timer-count {
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.question-zone {
+    background-color: #3683af;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 600px;
+    height: 500px;
+}
+
+.validation-zone {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.abandon-button {
+    border-radius: 15px 15px;
+    border-color: black;
+    color: #eaeaea;
+    background-color: #d74a49;
+    padding: 10px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    width: px;
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.enter-button {
+    border-radius: 15px 15px;
+    border-color: black;
+    color: #eaeaea;
+    background-color: #7db37d;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    width: 200px;
+    box-shadow:
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

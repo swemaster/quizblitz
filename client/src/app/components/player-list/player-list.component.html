@@ -1,0 +1,35 @@
+<div class="player-container">
+    <div class="sort-select">
+        <div class="player-title">Joueurs</div>
+        <label for="sort-type" class="sort-type">Trier par :</label>
+        <select name="order-type" class="order-select" (change)="onOrderTypeChange($event)">
+            <option value="">--Please choose an option--</option>
+            <option value="name-ascendant">Nom ascendant</option>
+            <option value="name-descendant">Nom descendant</option>
+            <option value="points-ascendant">Pointage ascendant</option>
+            <option value="points-descendant">Pointage descendant</option>
+            <option value="status-ascendant">État du joueur ascendant</option>
+            <option value="status-descendant">État du joueur descendant</option>
+        </select>
+    </div>
+    <div class="player-list">
+        <div *ngFor="let player of players" class="player" [class]="player.status">
+            <span class="player-name">
+                {{ player.name }}
+            </span>
+            <span class="player-first" *ngIf="showBonus">
+                <img class="icon" src="assets/icons8-fire-60.png" alt="First" />
+                {{ player.bonuses }}
+            </span>
+            <span class="player-points"
+                ><img class="icon" src="assets/icons8-trophy-48.png" alt="Points" />
+                {{ player.points }}
+            </span>
+            <span class="ban-chat">
+                <label class="toggle-chat" (click)="toggleBannedChat(player.name)">
+                    <img class="icon-chat" [src]="isBannedChat[player.name] ? 'assets/ban-chat.png' : 'assets/chat.png'" alt="" />
+                </label>
+            </span>
+        </div>
+    </div>
+</div>

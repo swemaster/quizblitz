@@ -1,0 +1,15 @@
+<div class="histogram">
+    <div
+        *ngFor="let value of data; let i = index"
+        class="bar"
+        [style.width.%]="calculateRatio(value)"
+        [style.background-color]="question.choices[i].isCorrect ? '#11e034' : '#c40202'"
+    >
+        <div class="bar-content">
+            <div class="bar-text" [style.fontSize.%]="calculateFontSize(value)">{{ question.choices[i].text }}</div>
+            <div *ngIf="value !== 0" class="bar-value" [style.fontSize]="'30px'">
+                {{ value }}
+            </div>
+        </div>
+    </div>
+</div>

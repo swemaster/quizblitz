@@ -1,0 +1,31 @@
+<!-- FILEPATH: /home/z/LOG2990-101/client/src/app/pages/result-page/result-page.component.html -->
+<!doctype html>
+<html>
+    <div class="container">
+        <header>
+            <app-navbar></app-navbar>
+        </header>
+
+        <body>
+            <!-- Histogram -->
+
+            <!-- Player list component -->
+            <div class="player-list">
+                <app-player-list [players]="match.players" [showBonus]="true"></app-player-list>
+            </div>
+            <div class="hist-switcher-container">
+                <div class="hist-switcher-elements">Zone de statistiques</div>
+                <app-hist-switch [game]="match.game"></app-hist-switch>
+            </div>
+            <!-- Chat bar component -->
+            <div class="chat">
+                <app-chat-bar></app-chat-bar>
+                <!-- <app-chat></app-chat> -->
+            </div>
+        </body>
+
+        <footer>
+            <input type="button" class="abandon-button" value="Retour au menu" (click)="quitGame()" />
+        </footer>
+    </div>
+</html>

@@ -1,0 +1,36 @@
+<body [ngClass]="historics.length < 5 ? 'scroll-less' : 'body'">
+    <div class="background">
+        <app-navbar></app-navbar>
+        <h2 id="history-title">Historique de parties jouées</h2>
+        <div class="sorting-reset-container">
+            <div class="sorting-dropdown">
+                <label for="sortOptions">Ordonner selon:</label>
+                <select id="sortOptions" (change)="onSortChange($event)">
+                    <option value="" disabled selected hidden>Choisir un tri</option>
+                    <option value="nameAsc">Nom de jeu &#9650;</option>
+                    <option value="nameDesc">Nom de jeu &#9660;</option>
+                    <option value="dateAsc">Date &#9650;</option>
+                    <option value="dateDesc">Date &#9660;</option>
+                </select>
+            </div>
+            <div class="reset-button">
+                <button (click)="confirmReset()">
+                    <span>Réinitialiser l'historique</span>
+                </button>
+            </div>
+        </div>
+        <div class="list-container">
+            <div *ngIf="historics.length === 0" class="empty-history-message">Aucune partie présente dans l'historique.</div>
+            <div class="history-list">
+                <ul>
+                    <li *ngFor="let historic of historics">
+                        <app-history [historic]="historic"></app-history>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="return-button" (click)="goBackToAdminPage()">Retour à la page d'administration</button>
+        </div>
+    </div>
+</body>

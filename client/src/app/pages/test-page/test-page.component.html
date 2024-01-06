@@ -1,0 +1,28 @@
+<body>
+    <div class="page-container" (window:keydown)="onKeyDown($event)">
+        <app-navbar></app-navbar>
+        <div class="column-left">
+            <div class="scorer">
+                <fa-icon class="trophy-icon" [icon]="faTrophy"></fa-icon>
+                <p class="scorer-count">{{ score }}</p>
+            </div>
+        </div>
+        <div class="column-right">
+            <app-chat-bar></app-chat-bar>
+        </div>
+        <div class="column-middle">
+            <app-timer [time]="time"></app-timer>
+            <div class="question-zone">
+                <app-question-in-game
+                    (scorerEvent)="setScore($event.score)"
+                    [showRightAnswersTest]="isShowingAnswers"
+                    [isAllowedToChange]="isAllowedToChange"
+                ></app-question-in-game>
+            </div>
+            <div class="validation-zone">
+                <input type="button" class="abandon-button" value="Abandonner" (click)="quitGame()" />
+                <input type="button" class="enter-button" value="Valider" (click)="validateAnswers()" />
+            </div>
+        </div>
+    </div>
+</body>

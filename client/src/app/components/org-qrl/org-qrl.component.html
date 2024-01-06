@@ -1,0 +1,10 @@
+<div class="question-zone">
+    <p class="name">{{ currentPlayer }}</p>
+    <h1>Évaluation de question</h1>
+    <div class="question-container">{{ currentViewingAnswer }}</div>
+    <div class="value-range">
+        <input id="points-changing" type="range" [(ngModel)]="selectedValue" min="0" max="100" step="50" value="0" oninput="rangeValue.innerText = this.value" />
+        <p id="rangeValue">0</p>
+    </div>
+    <input type="button" class="enter-button" value="Prochain joueur" [hidden]="!showNextPlayer" (click)="nextAnswer()" />
+</div>

@@ -1,0 +1,47 @@
+<h2 id="numbered">{{ index + 1 }}</h2>
+<div class="question-container">
+    <form id="question-form">
+        <div class="question-head">
+            <div (click)="clicked = true" class="question-name">
+                <div *ngIf="clicked; then thenBlock; else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <textarea
+                        [ngClass]="question.text === '' ? 'no-value' : 'none'"
+                        [(ngModel)]="question.text"
+                        [ngModelOptions]="{ standalone: true }"
+                        placeholder="Nouveau titre"
+                    ></textarea>
+                </ng-template>
+                <ng-template #elseBlock> {{ question.text | slice: 0 : 30 }}{{ question.text.length > 30 ? '...' : '' }} </ng-template>
+            </div>
+            <div class="question-actions">
+                <div>{{ question.points }} points</div>
+                <div class="value-range">
+                    <input
+                        id="points-changing"
+                        type="range"
+                        min="10"
+                        max="100"
+                        step="10"
+                        value="{{ question.points }}"
+                        (input)="onPointsChanged($event, question.id)"
+                    />
+                </div>
+                <div>{{ game.duration }} secondes</div>
+            </div>
+        </div>
+        <div class="question-foot">Question à réponse longue</div>
+    </form>
+
+    <div class="question-actions">
+        <button (click)="updateQuestionPosition(true, index)" class="arrow-button" style="padding: 10px">
+            <img src="assets/arrow-up-solid.svg" alt="Up" />
+        </button>
+        <button (click)="deleteQuestion(question.id)" class="delete-button" style="padding: 10px">
+            <img src="assets/trash.png" alt="Delete" />
+        </button>
+        <button (click)="updateQuestionPosition(false, index)" class="arrow-button" style="padding: 10px">
+            <img src="assets/arrow-down-solid.svg" alt="Down" />
+        </button>
+    </div>
+</div>

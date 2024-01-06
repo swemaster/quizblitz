@@ -1,0 +1,38 @@
+.question-type {
+    color: grey;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Cherry Bomb One', cursive;
+    text-shadow: none;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    height: 450px;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    border: solid grey 5px;
+    padding: 20px;
+}
+.carousel {
+    display: flex;
+}
+button {
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    color: grey;
+    border: solid white 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    color: white;
+    transition: 0.75s;
+    border-radius: 50px;
+    background-color: black;
+}

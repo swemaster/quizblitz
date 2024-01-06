@@ -1,0 +1,14 @@
+<div class="carousel-container">
+    <button (click)="previous()">❮</button>
+    <div class="carousel">
+        <!-- use an array of questions as mock as it will be what the result page uses -->
+        <div *ngFor="let question of game.questions; let i = index" [hidden]="currentIndex !== i">
+            <div class="question-type">{{ question.type }} - {{ question.text }}</div>
+            <ng-container [ngSwitch]="question.type">
+                <app-hist-qcm [data]="question.selections" [question]="question" *ngSwitchCase="'QCM'"></app-hist-qcm>
+                <app-hist-resqrl [question]="question" *ngSwitchCase="'QRL'"></app-hist-resqrl>
+            </ng-container>
+        </div>
+    </div>
+    <button (click)="next()">❯</button>
+</div>

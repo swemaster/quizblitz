@@ -1,0 +1,127 @@
+body {
+    overflow: hidden;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 200%;
+    color: #fdfdfd;
+    display: grid;
+    align-items: center;
+    margin-top: 0px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+.background {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.quit {
+    cursor: pointer;
+    border-radius: 20px;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(34, 26, 71, 0.7);
+    margin-top: 50px;
+    margin-left: 7%;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    font-family: 'Verdana', sans-serif;
+}
+
+.start {
+    cursor: pointer;
+    border-radius: 20px;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(34, 26, 71, 0.7);
+    margin-top: 50px;
+    right: 100px;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    position: absolute;
+    font-family: 'Verdana', sans-serif;
+}
+
+.redirection-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.container {
+    width: 1338px;
+    height: 600px;
+    position: relative;
+    background-color: #3683af;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% auto 0;
+}
+
+.title-list {
+    font-family: 'Cherry Bomb One', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    font-size: 200%;
+    color: #fdfdfd;
+    justify-content: center;
+    display: flex;
+}
+
+.access-code {
+    width: 500px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: #022d45;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.text {
+    font-family: 'Cherry Bomb One', cursive;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    font-size: 150%;
+    color: #fdfdfd;
+    justify-content: center;
+}
+
+.player-item {
+    font-family: 'Verdana', sans-serif;
+    background-color: rgba(34, 26, 71, 0.7);
+    color: #fdfdfd;
+    border: 1px solid gray;
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.players-container {
+    width: 1200px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

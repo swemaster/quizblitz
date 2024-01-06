@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>QuizBlitz</title>
+    </head>
+    <body [ngClass]="blinking ? 'blink-red' : 'normal'">
+        <div class="page-container" (window:keydown)="onKeyDown($event)">
+            <app-navbar></app-navbar>
+            <div class="column-left">
+                <app-scorer [score]="score"></app-scorer>
+            </div>
+            <div class="column-right">
+                <app-chat-bar style="margin-left: 50px; width: 70%"></app-chat-bar>
+            </div>
+            <div class="column-middle">
+                <app-timer [time]="time"></app-timer>
+                <div class="question-zone">
+                    <app-question-in-game
+                        (scorerEvent)="updateScoreTimer($event)"
+                        (sendSelectionEvent)="sendSelection($event)"
+                        (textEntered)="onQRLText($event)"
+                        [showRightAnswersTest]="isShowingAnswers"
+                        [isAllowedToChange]="isAllowedToChange"
+                        [scoreMultiplier]="scoreMultiplier"
+                    ></app-question-in-game>
+                </div>
+                <div class="validation-zone">
+                    <input type="button" class="abandon-button" value="Abandonner" (click)="playerQuitGame()" />
+                    <input type="button" class="enter-button" value="Valider" (click)="clickEnterButton()" />
+                    <audio id="soundEffect" src="assets/smartsound__Dramatic_Short.mp3"></audio>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

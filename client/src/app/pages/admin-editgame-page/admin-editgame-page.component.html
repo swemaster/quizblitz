@@ -1,0 +1,115 @@
+<head>
+    <app-navbar></app-navbar>
+    <form id="game-form">
+        <label for="game-title">Nom du jeu : </label>
+        <input type="text" id="game-title" required />
+        <label for="game-desciption">Description : </label>
+        <input type="text" id="game-description" required />
+    </form>
+</head>
+<body>
+    <div class="background">
+        <h2 id="game-title">QuizBlitz</h2>
+
+        <div id="edit-game-title">
+            <h2 (click)="editGameTitle()" style="display: flex; justify-content: center; align-items: center">
+                Création du jeu {{ game.title }}
+                <div class="edit-button"><img src="assets/edit.png" alt="Edit Element" /></div>
+            </h2>
+            <div class="text-bubble-container" *ngIf="showTextBubble.game">
+                <div class="text-bubble">
+                    <textarea [(ngModel)]="newText" [ngModelOptions]="{ standalone: true }" placeholder="Nouveau titre"></textarea>
+                    <button (click)="saveGameTitle()" class="exit-button">Enregistrer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-settings">
+            <div (click)="editGameDescription()" class="settings-container">
+                Description : {{ game.description }}
+                <div class="edit-button"><img src="assets/edit.png" alt="Edit Element" /></div>
+            </div>
+            <div class="text-bubble-container" *ngIf="showTextBubble.description">
+                <div class="text-bubble">
+                    <textarea [(ngModel)]="newText" [ngModelOptions]="{ standalone: true }" placeholder="Nouvelle description"></textarea>
+                    <button (click)="saveGameDescription()" class="exit-button">Enregistrer</button>
+                </div>
+            </div>
+            <div (click)="showTextBubble.duration = true" class="settings-container">
+                Temps par question : {{ game.duration }}
+                <div class="edit-button"><img src="assets/edit.png" alt="Edit Element" /></div>
+            </div>
+            <div class="text-bubble-container" *ngIf="showTextBubble.duration">
+                <div class="text-bubble">
+                    <div class="value-range" style="padding: 25px; width: 200px">
+                        <input type="range" min="10" max="60" value="{{ game.duration }}" (input)="onDurationChanged($event)" style="width: 190px" />
+                    </div>
+                    <button (click)="showTextBubble.duration = false" class="exit-button">Fermer</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-container">
+            <div class="question-list">
+                <ul>
+                    <li *ngFor="let question of game.questions; let questionIndex = index">
+                        <ng-container [ngSwitch]="question.type">
+                            <app-question-eqcm
+                                [question]="question"
+                                [game]="game"
+                                [index]="questionIndex"
+                                (deleteQuestionEvent)="deleteQuestion($event)"
+                                (updateQuestionPositionEvent)="updateQuestionPosition($event)"
+                                *ngSwitchCase="'QCM'"
+                            ></app-question-eqcm>
+                            <app-question-eqrl
+                                [question]="question"
+                                [game]="game"
+                                [index]="questionIndex"
+                                (deleteQuestionEvent)="deleteQuestion($event)"
+                                (updateQuestionPositionEvent)="updateQuestionPosition($event)"
+                                *ngSwitchCase="'QRL'"
+                            ></app-question-eqrl>
+                        </ng-container>
+                    </li>
+                </ul>
+                <ul>
+                    <div style="display: flex; margin-left: -20px; width: 100%">
+                        <div class="create-question-container">
+                            <button
+                                class="return"
+                                [routerLink]="validateQCMQuestions() && validateTitles() ? '/admin' : '/editgame/' + gameId"
+                                (click)="onSaveAndReturn()"
+                            >
+                                Sauvegarder et retourner
+                            </button>
+                        </div>
+                        <div class="create-question-container">
+                            <button (click)="createNewQCMQuestion()" class="create-button">
+                                <div class="static">
+                                    <img src="assets/icons8-add-100.png" alt="Create New QCM Question" loading="lazy" />
+                                </div>
+                                <div class="animated">
+                                    <img src="assets/icons8-add.gif" alt="Create New QCM Question" loading="lazy" />
+                                </div>
+                            </button>
+                            <div class="question-type">Question à choix multiple</div>
+                        </div>
+
+                        <div class="create-question-container">
+                            <button (click)="createNewQRLQuestion()" class="create-button">
+                                <div class="static">
+                                    <img src="assets/icons8-add-100.png" alt="Create New QRL Question" loading="lazy" />
+                                </div>
+                                <div class="animated">
+                                    <img src="assets/icons8-add.gif" alt="Create New QRL Question" loading="lazy" />
+                                </div>
+                            </button>
+                            <div class="question-type">Question à réponse longue</div>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

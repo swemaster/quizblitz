@@ -1,0 +1,102 @@
+body {
+    overflow: hidden;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 400%;
+    color: #fdfdfd;
+    display: grid;
+    align-items: center;
+    margin-top: 0px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+.background {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.retour {
+    border-radius: 20px;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(34, 26, 71, 0.7);
+    margin-left: 7%;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    font-family: 'Verdana', sans-serif;
+    margin-top: 50px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.container {
+    width: 1350px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #3683af;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.access-code-input,
+.player-name-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+input {
+    padding: 18px;
+    font-size: 18px;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+    cursor: text;
+}
+
+.button {
+    padding: 18px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0b2c3f;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: #0d47a1;
+        transform: scale(1.05);
+    }
+}
+
+.error-message {
+    color: #b54839;
+    font-size: x-large;
+    margin-top: 2%;
+}

@@ -1,0 +1,24 @@
+<body>
+    <div class="background">
+        <app-navbar></app-navbar>
+        <h1 class="header-item">Joindre une partie</h1>
+        <div class="container">
+            <div class="access-code-input">
+                <input [(ngModel)]="inputCode" placeholder="Entrez un code d'accès" [disabled]="!isAccessCodeEditable" />
+                <button class="button" (click)="validateAccess()" *ngIf="isAccessCodeEditable">Valider</button>
+            </div>
+
+            <div class="player-name-input" *ngIf="isAccessCodeValid">
+                <input [(ngModel)]="playerName" placeholder="Choisissez un nom de joueur" />
+            </div>
+
+            <button class="button" (click)="joinMatch()" *ngIf="isAccessCodeValid">Rejoindre</button>
+
+            <button class="button" (click)="resetAccessCode()" *ngIf="isAccessCodeValid">Réinitialiser</button>
+
+            <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+        </div>
+
+        <button class="retour" routerLink="/mainpage">Retour a la page principale</button>
+    </div>
+</body>

@@ -1,0 +1,77 @@
+.container {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    width: 100%;
+}
+
+body {
+    // Your styles for the body tag here
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    // padding: 5%;
+}
+
+.player-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+.hist-switcher-elements {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+.hist-switcher-container {
+    color: white;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #3683af;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+
+.abandon-button {
+    border-radius: 15px 15px;
+    border-color: black;
+    color: #eaeaea;
+    background-color: #d74a49;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 60px;
+    width: 200px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}

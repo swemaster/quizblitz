@@ -1,0 +1,26 @@
+{
+  "id": "e4629cf4-84f6-4ffc-9030-7c6407da5cad",
+  "title": "Sample Game",
+  "isVisible": true,
+  "lastModification": "2018-11-13T20:20:39Z",
+  "duration": 60,
+  "description": "This is a sample game.",
+  "questions": [
+    {
+      "id": "q414",
+      "type": "QCM",
+      "text": "Sample Question",
+      "points": 40,
+      "choices": [
+        {
+          "text": "Choice 1",
+          "isCorrect": true
+        },
+        {
+          "text": "Choice 2",
+          "isCorrect": false
+        }
+      ]
+    }
+  ]
+}

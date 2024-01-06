@@ -1,0 +1,215 @@
+body {
+    height: auto;
+}
+
+.background {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+#game-title {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+#org-game-title {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    margin-bottom: 30px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+}
+ul {
+    list-style-type: none;
+}
+
+.org-question-text {
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    margin: 30px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+.org-question-points {
+    display: flex;
+    border-radius: 10px;
+    background-color: #cfa006;
+    justify-self: center;
+    align-self: center;
+    color: #eaeaea;
+    width: 70px;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 30px;
+}
+.trophy-icon {
+    font-size: 100%;
+}
+.org-text {
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#edit-game-title > :first-child {
+    cursor: pointer;
+}
+
+.text-bubble-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.question-container {
+    width: 90%;
+    margin: 5% auto 0;
+    background-color: #3683af;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.separated-view {
+    display: flex;
+    height: 550px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: stretch;
+}
+
+app-player-list {
+    width: 100%;
+    margin: 0 10px;
+}
+app-chat-bar {
+    width: 20%;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+app-org-qrl-page {
+    width: 100%;
+    margin: 0 10px;
+}
+
+app-waiting-answer-transition {
+    display: flex;
+    width: 100%;
+    margin: 0 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+app-stats {
+    width: 100%;
+    margin: 0 10px;
+}
+:host app-chat-bar[specificityattr] ::ng-deep div.chat-zone {
+    width: 100%;
+}
+
+.return {
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    background-color: #fc7f6c;
+    font-weight: lighter;
+    font-size: 20px;
+    color: white;
+    font-family: 'Cherry Bomb One', cursive;
+    text-shadow: 2px 2px 4px black;
+}
+
+.return:hover {
+    background-color: #be2710;
+    cursor: pointer;
+}
+
+.game-buttons {
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    margin: 10px;
+    background-color: #fc7f6c;
+    font-weight: lighter;
+    font-size: 20px;
+    color: white;
+    font-family: 'Cherry Bomb One', cursive;
+    text-shadow: 2px 2px 4px black;
+}
+
+.game-buttons:hover {
+    background-color: #be2710;
+    cursor: pointer;
+}
+
+.stats-container {
+    display: flex;
+    margin-right: 20px;
+}
+
+.stats-item {
+    flex: 0 0 0; /* Set the width to 0 when ngIf condition is false */
+    transition: flex 0.3s; /* Optional smooth transition if you want to animate the change */
+}
+.stats-item.hidden {
+    flex: 0 0 auto; /* Restore the default width when ngIf condition is true */
+}
+
+.stat-list-container {
+    padding: 15px;
+    width: 70%;
+}
+
+.stat-list-sub-container {
+    width: 100%;
+}
+
+.normal {
+    border: solid #fe654f 20px;
+}
+.blink-red {
+    animation: blink-animation 0.75s infinite;
+    transition: 0.2s;
+}
+
+@keyframes blink-animation {
+    0%,
+    100% {
+        border: solid #fe654f 20px;
+    }
+    50% {
+        border: inset red 20px;
+    }
+    25% {
+        border: inset #b54839 20px;
+    }
+}

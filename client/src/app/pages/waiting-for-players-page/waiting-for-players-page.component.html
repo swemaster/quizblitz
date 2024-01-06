@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="fr">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
+    <body>
+        <div class="background">
+            <app-navbar></app-navbar>
+            <h1 class="header-item">En attente des joueurs</h1>
+            <div class="container">
+                <div class="access-code">
+                    <h3 class="code-label">Code d'accès : {{ accessCode }}</h3>
+                </div>
+                <div class="list-gamers">
+                    <h3 class="title-list">Liste des joueurs :</h3>
+                    <ul class="players-container">
+                        <div class="player-item" *ngFor="let player of players">
+                            {{ player }}
+                            <div (click)="showBanConfirmationAlert(player)" class="ban-image">
+                                <img class="black-ban" src="assets/ban-black.png" alt="" />
+                                <img class="red-hover-ban" src="assets/ban-red.png" alt="" />
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <div class="lock-unlock">
+                    <label class="toggle-switch" (click)="toggleViewLock()">
+                        <img id="lock-image" [src]="match.canBeAccessed ? 'assets/unlocked.png' : 'assets/locked.png'" alt="" width="100px" />
+                        <div class="message">{{ match.canBeAccessed ? 'Partie déverrouillée' : 'Partie verrouillée' }}</div>
+                    </label>
+                </div>
+            </div>
+            <div class="redirection-buttons">
+                <button class="retour" (click)="showConfirmationAlert(accessCode)">Retour a la page de creation</button>
+                <button class="start" (click)="startGame()">Commencer la partie</button>
+            </div>
+        </div>
+    </body>
+</html>

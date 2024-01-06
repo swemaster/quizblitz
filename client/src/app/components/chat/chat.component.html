@@ -1,0 +1,25 @@
+<div class="chat-card">
+    <div class="chat-header">
+        <div class="h2">Chat</div>
+    </div>
+
+    <div class="chat-body" chatContainer>
+        <div *ngFor="let message of chatService.messages">
+            <div class="message-details">
+                <p>{{ message.name }} @ {{ message.time }}</p>
+            </div>
+            <div class="message incoming">
+                <p>{{ message.text }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="chat-footer">
+        <ng-container *ngIf="isAllowedToChat; else disabledChat">
+            <input id="message" placeholder="Type your message" [(ngModel)]="chatService.message" (keydown.enter)="sendMessage()" type="text" />
+            <button (click)="sendMessage()">Send</button>
+        </ng-container>
+        <ng-template #disabledChat>
+            <div class="disabled-chat">Vous êtes banni(e) du chat.</div>
+        </ng-template>
+    </div>
+</div>

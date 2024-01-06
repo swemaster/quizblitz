@@ -1,0 +1,117 @@
+body {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.team-name {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: rgb(255, 255, 255);
+    font-size: small;
+    font-family: Inter;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 400%;
+    color: #ffffff;
+    text-shadow: -1px 1px 8px #000;
+    margin-bottom: 20px;
+}
+.container img {
+    margin-top: -60px;
+    margin-bottom: -50px;
+}
+
+.footer-item {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.footer-item p {
+    color: rgb(255, 255, 255);
+    font-size: small;
+    font-family: Inter;
+}
+
+.server-message {
+    justify-content: center;
+    width: 20%;
+    min-width: min-content;
+}
+
+#server-message .justified .button {
+    width: 400px;
+    height: 75px;
+    color: #ffffff;
+    background-color: #0b2c3f;
+    font-size: large;
+    margin: 30px 25px 15px 25px;
+    border-radius: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+}
+
+#server-message .justified .firstbutton {
+    width: 350px;
+    height: 100px;
+    background-color: #cfa006;
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    filter: drop-shadow(0px 4px 20px #000);
+    color: #ffffff;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+#server-message .justified {
+    width: 1200px;
+    height: 350px;
+    background-color: #3683af;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#server-message .justified .qsmark {
+    right: -570px;
+    position: relative;
+    width: 150px;
+    transform: rotate(17.3deg);
+    top: -15px;
+}
+
+#server-message .justified .alarm {
+    position: relative;
+    left: -570px;
+    bottom: -15px;
+    width: 180px;
+    transform: rotate(-18.6deg);
+}

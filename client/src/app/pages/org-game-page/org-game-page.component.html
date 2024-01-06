@@ -1,0 +1,63 @@
+<body [ngClass]="blinking ? 'blink-red' : 'normal'">
+    <audio id="soundEffect" src="assets/smartsound__Dramatic_Short.mp3"></audio>
+    <div class="background">
+        <app-navbar></app-navbar>
+        <div id="org-game-title">
+            <h2>Jeu {{ match.game.title }}</h2>
+        </div>
+        <div *ngFor="let question of match.game.questions" style="width: 90%">
+            <div *ngIf="question.id === match.questionId">
+                <div class="question-list">
+                    <div class="question-container">
+                        <div class="org-question-text">{{ question.text }}</div>
+                        <div>
+                            <div class="org-question-points">
+                                <fa-icon class="trophy-icon" [icon]="faTrophy"></fa-icon>
+                                <p class="org-text">{{ question.points }}</p>
+                            </div>
+                        </div>
+                        <app-timer
+                            [style.background-color]="'#802f7e'"
+                            [style.border-radius]="'20px'"
+                            *ngIf="timerService.isWaiting"
+                            [time]="timerService.time"
+                        ></app-timer>
+                        <app-timer *ngIf="!timerService.isWaiting" [time]="timerService.time"></app-timer>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="separated-view">
+            <div class="stat-list-container">
+                <div *ngFor="let question of match.game.questions">
+                    <div *ngIf="question.id === match.questionId" style="display: flex">
+                        <div class="stats-container">
+                            <ng-container [ngSwitch]="question.type">
+                                <!-- add input, when time is up, then it sends the selections -->
+                                <app-stats [question]="question" [match]="match" *ngSwitchCase="'QCM'"></app-stats>
+                                <app-stats-qrl [match]="match" *ngSwitchCase="'QRL'"> </app-stats-qrl>
+                            </ng-container>
+                        </div>
+
+                        <ng-container [ngSwitch]="question.type">
+                            <app-player-list [players]="players" [showBonus]="true" *ngSwitchCase="'QCM'"></app-player-list>
+                            <div *ngSwitchCase="'QRL'" style="width: 100%">
+                                <app-org-qrl-container [question]="question" [match]="match" [playerAmount]="playerAmount"></app-org-qrl-container>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            <app-chat-bar specificityattr style="margin-top: 20px"></app-chat-bar>
+        </div>
+
+        <div style="padding: 80px">
+            <input type="button" class="game-buttons" value="Prochaine question" (click)="nextQuestion()" />
+            <input [routerLink]="path" type="button" class="return" value="Quitter la partie" (click)="closeGame()" />
+            <input type="button" class="game-buttons" value="Pause" (click)="pause()" />
+            <input type="button" class="game-buttons" value="Relancer" (click)="resume()" />
+            <input type="button" class="game-buttons" value="Mode panique!" (click)="startPanic()" />
+        </div>
+    </div>
+</body>

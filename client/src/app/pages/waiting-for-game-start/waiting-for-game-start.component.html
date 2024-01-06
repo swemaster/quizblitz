@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
+    <body>
+        <div class="background">
+            <app-navbar></app-navbar>
+            <h1 class="header-item">Attente du lancement du jeu par l'organisateur</h1>
+            <div class="container">
+                <div class="player-name">
+                    <h3 class="text">Bienvenue dans la partie {{ showPlayerName() }} !</h3>
+                </div>
+                <div class="access-code">
+                    <h3 class="text">Code d'accès : {{ accessCode }}</h3>
+                </div>
+                <div class="list-players">
+                    <h3 class="title-list">Liste des joueurs :</h3>
+                    <ul>
+                        <div class="player-item" *ngFor="let player of players">{{ player }}</div>
+                    </ul>
+                </div>
+            </div>
+            <div class="redirection-buttons">
+                <button class="quit" (click)="showConfirmationAlert()">Quitter la partie</button>
+            </div>
+        </div>
+    </body>
+</html>

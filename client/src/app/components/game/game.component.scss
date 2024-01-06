@@ -1,0 +1,62 @@
+.game-container {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+.game-title {
+    font-weight: bold;
+    color: black;
+}
+
+.eye-icon {
+    width: 26px;
+    height: 15px;
+    margin-left: 5px;
+}
+
+.visibility-button {
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.last-modified {
+    font-size: small;
+    color: #888;
+}
+
+.game-actions {
+    display: flex;
+    align-items: center;
+}
+
+.edit-button,
+.export-button,
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.edit-button img,
+.export-button img,
+.delete-button img {
+    width: 20px;
+    height: 20px;
+}
+
+.create-button img {
+    width: 32px;
+    height: 32px;
+}

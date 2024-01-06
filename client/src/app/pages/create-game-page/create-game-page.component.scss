@@ -1,0 +1,128 @@
+.scroll-less {
+    overflow: hidden;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 600%;
+    margin: 20px;
+    color: #fdfdfd;
+    display: grid;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+.creation-partie {
+    background-color: white;
+    border: solid 3px transparent;
+    border-radius: 8px;
+    margin: 5px;
+    padding: 4px;
+    font-weight: bold;
+    color: black;
+    transition: 1.3s;
+}
+.creation-partie:hover {
+    border: solid 3px black;
+}
+
+.game-container:hover {
+    align-items: center;
+    border: 3px solid #fff;
+    background-color: #fe654f;
+}
+.game-container {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 3px solid #3683af;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+.content-container {
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+.game-settings {
+    border: 3px solid black;
+    border-bottom: 3px solid #b54839;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.game-questions {
+    text-decoration: underline;
+    margin: 5px;
+}
+
+.game-questions:hover {
+    text-decoration: underline #b54839;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.bullets {
+    list-style: circle;
+}
+
+ul {
+    margin: -2px;
+    list-style: none;
+}
+
+.game-name {
+    font-weight: bold;
+    color: black;
+    margin-right: auto;
+}
+
+.container {
+    background-color: #fe654f;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.list-container {
+    position: relative;
+    width: 1000px;
+    margin: 20px auto 0;
+    padding: 15px;
+    background-color: #3683af;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.retour {
+    border-radius: 20px;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(34, 26, 71, 0.7);
+    margin-top: 2%;
+    margin-left: 7%;
+    font-weight: bold;
+    font-size: medium;
+    color: white;
+    font-family: 'Verdana', sans-serif;
+}

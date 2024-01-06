@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
+    <body>
+        <div class="container">
+            <app-navbar></app-navbar>
+            <h1 class="header-item">La partie va commencer dans :</h1>
+            <div class="timer">
+                <app-timer [time]="time"></app-timer>
+            </div>
+        </div>
+    </body>
+</html>

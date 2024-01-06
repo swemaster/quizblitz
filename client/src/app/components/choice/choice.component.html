@@ -1,0 +1,25 @@
+<div class="answer-container">
+    <h1 id="numbered">{{ index + 1 }}</h1>
+
+    <div (click)="clicked = true" class="answer-name">
+        <div *ngIf="clicked; then thenBlock; else elseBlock"></div>
+        <ng-template #thenBlock>
+            <textarea [(ngModel)]="choice.text" [ngModelOptions]="{ standalone: true }" placeholder="Changer le choix" id="text-enter"></textarea>
+        </ng-template>
+        <ng-template #elseBlock> {{ choice.text | slice: 0 : 30 }}{{ choice.text.length > 30 ? '...' : '' }} </ng-template>
+    </div>
+
+    <label class="switch">
+        <input type="checkbox" id="check-value" [checked]="choice.isCorrect" (click)="updateValue()" />
+        <span class="slider round"></span>
+    </label>
+    <button (click)="updateChoiceIndex(false, index)" class="arrow-button">
+        <img src="assets/arrow-down-solid.svg" alt="Down" />
+    </button>
+    <button (click)="updateChoiceIndex(true, index)" class="arrow-button">
+        <img src="assets/arrow-up-solid.svg" alt="Up" />
+    </button>
+    <button (click)="deleteChoice(index)" class="delete-button">
+        <img src="assets/trash.png" alt="Delete" />
+    </button>
+</div>

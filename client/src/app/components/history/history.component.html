@@ -1,0 +1,10 @@
+<div class="history-container">
+    <form id="history-form">
+        <span class="game-title">Nom du jeu: {{ historic.gameName }}</span>
+        <div class="history-info">
+            <p class="play-date">Partie jouées le: {{ historic.playDate | date: 'yyyy-MM-dd HH:mm:ss' }}</p>
+            <p class="num-players">Nombre de joueurs: {{ historic.players }}</p>
+            <p class="best-points">Meilleur score: {{ historic.bestPoints }}</p>
+        </div>
+    </form>
+</div>

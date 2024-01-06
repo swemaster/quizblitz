@@ -1,0 +1,65 @@
+<h2 id="numbered">{{ index + 1 }}</h2>
+<div class="question-container">
+    <form id="question-form">
+        <div class="question-head">
+            <div (click)="clicked = true" class="question-name">
+                <div *ngIf="clicked; then thenBlock; else elseBlock"></div>
+                <ng-template #thenBlock>
+                    <textarea [(ngModel)]="question.text" [ngModelOptions]="{ standalone: true }" placeholder="Nouveau titre"></textarea>
+                </ng-template>
+                <ng-template #elseBlock> {{ question.text | slice: 0 : 30 }}{{ question.text.length > 30 ? '...' : '' }} </ng-template>
+            </div>
+            <div class="question-actions">
+                <div>{{ question.points }} points</div>
+                <div class="value-range">
+                    <input
+                        id="points-changing"
+                        type="range"
+                        min="10"
+                        max="100"
+                        step="10"
+                        value="{{ question.points }}"
+                        (input)="onPointsChanged($event, question.id)"
+                    />
+                </div>
+                <div>{{ game.duration }} secondes</div>
+            </div>
+        </div>
+        <ul id="answer-choices">
+            <li *ngFor="let choice of question.choices; let choiceIndex = index">
+                <app-choice
+                    [choice]="choice"
+                    [question]="question"
+                    [game]="game"
+                    [index]="choiceIndex"
+                    (deleteChoiceEvent)="deleteChoice($event)"
+                    (updateChoiceIndexEvent)="updateChoiceIndex($event)"
+                ></app-choice>
+            </li>
+        </ul>
+
+        <div class="button-container">
+            <div class="question-foot">Question à choix multiples</div>
+            <button (click)="createNewChoice(question.id)" class="create-button">
+                <div class="static">
+                    <img src="assets/icons8-add-100.png" alt="Create New Answer" loading="lazy" />
+                </div>
+                <div class="animated">
+                    <img src="assets/icons8-add.gif" alt="Create New Answer" loading="lazy" />
+                </div>
+            </button>
+        </div>
+    </form>
+
+    <div class="question-actions">
+        <button (click)="updateQuestionPosition(true, index)" class="arrow-button" style="padding: 10px">
+            <img src="assets/arrow-up-solid.svg" alt="Up" />
+        </button>
+        <button (click)="deleteQuestion(question.id)" class="delete-button" style="padding: 10px">
+            <img src="assets/trash.png" alt="Delete" />
+        </button>
+        <button (click)="updateQuestionPosition(false, index)" class="arrow-button" style="padding: 10px">
+            <img src="assets/arrow-down-solid.svg" alt="Down" />
+        </button>
+    </div>
+</div>

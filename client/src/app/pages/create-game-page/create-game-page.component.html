@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Page de creation de partie</title>
+    </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
+    <body [ngClass]="gameList.length < 10 ? 'scroll-less' : 'body'">
+        <div class="container">
+            <app-navbar></app-navbar>
+            <h1 class="header-item">Jeux</h1>
+            <div class="list-container">
+                <ul *ngFor="let game of gameList; let i = index" id="{{ game.id }}">
+                    <li *ngIf="game.isVisible === true">
+                        <div class="game-container" (click)="gameSelection(game.id)">
+                            <div class="game-name">{{ game.title }}</div>
+                            <button class="creation-partie" [hidden]="!gameIsSelected.get(game.id)" (click)="createNewMatch()">
+                                {{ createGame }}
+                            </button>
+                            <button class="creation-partie" [hidden]="!gameIsSelected.get(game.id)" (click)="sendCurrentGame(game)">
+                                {{ testGame }}
+                            </button>
+                        </div>
+                        <div [hidden]="!gameIsSelected.get(game.id)" class="content-container">
+                            <div class="game-settings">Description du jeu: {{ game.description }}</div>
+                            <div class="game-settings">Temps alloué pour répondre: {{ game.duration }} secondes</div>
+                            <div class="game-settings">Liste des questions :</div>
+                            <ul class="bullets" *ngFor="let question of game.questions">
+                                <li>
+                                    <div class="game-questions">{{ question.text }}</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="retour" routerLink="/home">Retour a la page principale</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+.history-container {
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+
+.history-info {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+}
+
+.game-title {
+    font-family: 'Cherry Bomb One', cursive;
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: x-large;
+    -webkit-text-fill-color: #60a4c9;
+    -webkit-text-stroke: 1px;
+    -webkit-text-stroke-color: #265c79;
+}
+
+.play-date {
+    font-size: medium;
+    color: #676666;
+    font-weight: bold;
+}
+
+.history-container .num-players {
+    font-size: medium;
+    color: #676666;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+.best-points {
+    font-size: medium;
+    color: #676666;
+    font-weight: bold;
+}

@@ -1,0 +1,6 @@
+<div *ngIf="this.timerService?.time !== 0" class="stat-list-sub-container">
+    <app-waiting-answer-transition></app-waiting-answer-transition>
+</div>
+<div *ngIf="(this.timerService?.time === 0 && this.qrlMap!.size > 0) || this.qrlMap!.size === playerAmount" class="stat-list-sub-container">
+    <app-org-qrl [question]="question" [match]="match" [qrlMap]="qrlMap"></app-org-qrl>
+</div>

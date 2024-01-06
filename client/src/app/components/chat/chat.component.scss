@@ -1,0 +1,144 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.h2 {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-card {
+    width: 300px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #000; /* This creates the black line around the chat */
+    position: relative; /* This allows absolute positioning within this container */
+    display: flex;
+    flex-direction: column; /* This makes the children of chat-card stack vertically */
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+}
+
+.chat-header .h2 {
+    font-size: 16px;
+    color: #333;
+}
+
+.chat-body {
+    padding: 20px;
+    padding-bottom: 35px; /* Adjust this value based on the height of your chat footer */
+    height: 500px; /* Adjust this value according to your needs */
+    height: calc(100% - 60px); /* This makes the chat body take up all space except for the space taken by the footer */
+    overflow-y: auto;
+    overflow-x: auto; /* This will add a scrollbar when the content is too wide */
+    flex-grow: 1; /* This makes the chat body take up the remaining space */
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.incoming {
+    background-color: #e1e1e1;
+}
+
+.outgoing {
+    background-color: #f2f2f2;
+    text-align: right;
+}
+
+.message p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+.chat-footer {
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: flex;
+    width: 95%;
+    display: flex; /* This makes the children of chat-footer align horizontally */
+    justify-content: space-between; /* This adds space between the input field and button */
+    align-items: center; /* This vertically centers the input field and button */
+    position: absolute;
+    bottom: 0;
+}
+
+.chat-footer input[type='text'] {
+    flex-grow: 1;
+    padding: 5px;
+    border: none;
+    width: 30%;
+    border-radius: 6px;
+}
+
+.chat-footer button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #4285f4;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 7px;
+}
+
+.message-details {
+    font-size: 0.6em;
+    color: grey;
+    margin-bottom: 1px;
+}
+
+.chat-footer button:hover {
+    background-color: #0f9d58;
+}
+
+@keyframes chatAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.chat-card .message {
+    animation: chatAnimation 0.3s ease-in-out;
+    animation-fill-mode: both;
+    animation-delay: 0.1s;
+}
+
+.chat-card .message:nth-child(even) {
+    animation-delay: 0.2s;
+}
+
+.chat-card .message:nth-child(odd) {
+    animation-delay: 0.3s;
+}
+
+.disabled-chat {
+    background-color: #bab5b5;
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: rgb(183, 20, 20);
+}

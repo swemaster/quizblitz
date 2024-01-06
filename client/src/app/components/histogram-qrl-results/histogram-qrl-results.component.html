@@ -1,0 +1,14 @@
+<div class="histogram">
+    <div *ngFor="let value of question.selections; let i = index" class="bar">
+        <div class="bar-a">
+            <div class="bar-text">{{ scores[i] }}</div>
+        </div>
+        <div class="bar-b" [style.width.%]="calculateRatio(value)" [style.background-color]="colors[i]">
+            <div class="bar-content">
+                <div *ngIf="value !== 0" class="bar-value" [style.fontSize]="'30px'">
+                    {{ value }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

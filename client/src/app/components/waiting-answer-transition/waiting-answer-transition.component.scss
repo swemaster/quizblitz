@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    border-radius: 10px;
+    background-color: #cfa006;
+    color: #eaeaea;
+    width: 80%;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 30px;
+}
+
+.text {
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

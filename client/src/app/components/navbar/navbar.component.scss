@@ -1,0 +1,14 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-title {
+    cursor: pointer;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    margin-left: 15px;
+}

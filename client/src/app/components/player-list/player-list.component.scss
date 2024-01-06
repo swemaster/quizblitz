@@ -1,0 +1,128 @@
+.player-container {
+    border-radius: 20px;
+    margin: 20px 0px;
+    padding: 1px;
+    background-color: #3683af;
+    color: #eaeaea;
+    height: 560px;
+    width: 100%;
+    display: block;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+}
+.player-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.icon {
+    margin-top: 4px;
+    margin-bottom: -4px;
+    margin-right: 5px;
+    height: 20px;
+    width: 20px;
+}
+.player-title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-self: left;
+    font-size: 26px;
+    margin: 20px;
+}
+.player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    padding: 10px;
+    margin: 5px 20px;
+    border: white solid 5px;
+    border-radius: 20px;
+}
+.player-first {
+    margin-left: auto;
+    margin-right: 30px;
+    margin-bottom: 5px;
+    align-items: center;
+    font-weight: bold;
+}
+
+.player:hover {
+    border: #3683af solid 5px;
+}
+
+.player-name {
+    font-weight: bold;
+}
+.player-points {
+    font-weight: bold;
+}
+
+.active {
+    background-color: #11e034;
+    color: white;
+}
+
+.idle {
+    background-color: #c40202;
+    color: white;
+}
+
+.typing {
+    background-color: #cfa006;
+    color: white;
+}
+
+.disconnected {
+    background-color: grey;
+    color: white;
+}
+.disconnected .player-name {
+    text-decoration: line-through;
+    text-decoration-color: black;
+    text-decoration-thickness: 3px;
+}
+
+.sort-select {
+    display: flex;
+}
+
+.order-select {
+    padding: 2px 5px;
+    width: 250px;
+    height: 25px;
+    border-radius: 20px;
+    align-self: right;
+    margin-left: 10px;
+    // position: absolute;
+    top: 0;
+    right: 10px;
+    margin-top: 30px;
+}
+.sort-type {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-self: right;
+    top: 0;
+    right: 10px;
+    margin-left: 35px;
+    margin-top: 32px;
+}
+.ban-chat {
+    margin-right: 30px;
+    margin-bottom: 5px;
+    align-items: center;
+}
+.icon-chat {
+    width: 30px;
+    height: auto;
+    transition:
+        opacity 0.3s,
+        width 0.3s,
+        height 0.3s;
+    position: relative;
+    left: 75%;
+    margin-top: 10px;
+    margin-left: 10px;
+    transform: translateX(-50%);
+}

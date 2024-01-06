@@ -1,0 +1,53 @@
+.histogram {
+    width: 77%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+    background-color: #f0f0f0;
+    background-image: repeating-linear-gradient(130deg, #cfa006, white 10px, transparent 10px, transparent 20px);
+    border: 5px solid #cfa006;
+    padding: 20px;
+    border-radius: 20px;
+    height: 75%;
+}
+
+.bar {
+    flex: 1;
+    margin-top: 5px;
+    text-align: right;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: width 0.3s;
+    font-family: 'Cherry Bomb One', cursive;
+    border: 5px solid transparent;
+    transition: border 0.3s;
+    transition: width 0.3s;
+}
+
+.bar:hover {
+    border: 5px solid white;
+}
+.bar-value {
+    margin-right: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: right;
+    padding-top: 5px;
+}
+.bar-text {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 5px;
+}
+.bar-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}

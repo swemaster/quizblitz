@@ -1,0 +1,64 @@
+.points {
+    display: flex;
+    border-radius: 10px;
+    background-color: #802f7e;
+    color: #eaeaea;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    padding: 5px;
+    margin: 30px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #183e4b;
+    margin-top: 30px;
+    color: #ffffff;
+    border-radius: 20px;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.description {
+    text-align: center;
+    color: #1b4552;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.answer-container {
+    display: grid;
+    justify-content: center;
+    row-gap: 15px;
+    margin: 5%;
+}
+
+button {
+    border-radius: 15px 15px;
+    border: solid black 5px;
+    color: #ffffff;
+    background-color: #0b2c3f;
+    padding: 10px 32px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
+    width: 500px;
+}
+
+.selected {
+    background-color: #cfa006;
+}
+
+.locked-in {
+    border-color: white;
+}
+
+.correct-choice-test {
+    background-color: #008000;
+}

@@ -1,0 +1,14 @@
+<div class="histogram">
+    <div class="bar" [style.width.%]="widthActive" [style.background-color]="'#11e034'">
+        <div class="bar-content">
+            <div class="bar-text">Actif</div>
+            <div class="bar-value" [style.fontSize]="'30px'">{{ playerStatusArray[0] }}</div>
+        </div>
+    </div>
+    <div class="bar" [style.width.%]="widthUnactive" [style.background-color]="'#c40202'">
+        <div class="bar-content">
+            <div class="bar-text">Inactif</div>
+            <div class="bar-value" [style.fontSize]="'30px'">{{ playerStatusArray[1] }}</div>
+        </div>
+    </div>
+</div>

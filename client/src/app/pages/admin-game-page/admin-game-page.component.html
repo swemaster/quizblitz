@@ -1,0 +1,31 @@
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet" />
+<body [ngClass]="games.length < 6 ? 'scroll-less' : 'body'">
+    <div class="background">
+        <app-navbar></app-navbar>
+        <h2 id="admin-title">Page d'administration</h2>
+        <div class="list-container">
+            <div class="game-list">
+                <ul>
+                    <li *ngFor="let game of games; let gameIndex = index">
+                        <div class="game-container">
+                            <app-game [game]="game" (deleteGameEvent)="deleteGame($event, gameIndex)"></app-game>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="game-button-container">
+                <button (click)="createNewGame()" class="create-button">
+                    <img src="assets/add.png" alt="Create New Game" />
+                </button>
+                <input type="file" accept=".json" class="import-button" (change)="importGame($event)" />
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="return-button" routerLink="/home">Retour à la page principale</button>
+            <button class="history-button" (click)="goToHistoryPage()">Consulter l'historique des parties jouées</button>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,39 @@
+body {
+    overflow: hidden;
+}
+
+.container {
+    background-color: #fe654f;
+    height: 100%;
+    background-image: repeating-linear-gradient(
+        130deg,
+        #b54839,
+        // #B54839 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    align-items: stretch;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+    font-family: 'Cherry Bomb One', cursive;
+    font-size: 400%;
+    color: #fdfdfd;
+    display: grid;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set width and height if necessary */
+    width: 100%;
+    height: 100%;
+}
